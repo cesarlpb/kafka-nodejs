@@ -1,0 +1,27 @@
+{
+    "doc": "Sample schema to help you get started.",
+    "fields": [
+      {
+        "doc": "User email",
+        "name": "email",
+        "type": "string"
+      },
+      {
+        "doc": "Indicates if the user is new",
+        "name": "isNew",
+        "type": "boolean"
+      },
+      {
+        "default": null,
+        "doc": "Message from the user",
+        "name": "message",
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    ],
+    "name": "value_info_users",
+    "namespace": "com.mycompany.mynamespace",
+    "type": "record"
+}
