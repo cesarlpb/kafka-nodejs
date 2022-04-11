@@ -10,7 +10,7 @@ A simple NodeJs project to publish and consume messages on Kafka using a custom 
 
 ## How to use it
 
-1. Use `docker-compose up -d` to install the dependencies listed on #### **`docker-compose.yml`**
+1. Use `docker-compose up -d` to install the dependencies listed on **`docker-compose.yml`**
 2. Use `npm install` to download the **`node_modules`**
 3. With the cluster running, start the NodeJs project with `node app.js`
 
@@ -27,7 +27,37 @@ Navigate to [http://localhost:9031](http://localhost:9031) to see the Control Ce
 - Sample schema
 ![Adding new schema](/img/sample-schema.PNG)
 
-**Note:** you may need to add the topic and the schema if the console shows an error once the project is running.
+**Note:** you may need to add the topic and the schema if the console shows an error once the project is running. The schema used in this test is the following (in AVRO):
+~~~
+{
+    "doc": "Sample schema to help you get started.",
+    "fields": [
+      {
+        "doc": "User email",
+        "name": "email",
+        "type": "string"
+      },
+      {
+        "doc": "Indicates if the user is new",
+        "name": "isNew",
+        "type": "boolean"
+      },
+      {
+        "default": null,
+        "doc": "Message from the user",
+        "name": "message",
+        "type": [
+          "null",
+          "string"
+        ]
+      }
+    ],
+    "name": "value_info_users",
+    "namespace": "com.mycompany.mynamespace",
+    "type": "record"
+}
+
+~~~
 
 ## Receiving Messages
 With the cluster running and the NodeJs project in execution, sending messages is simple:
